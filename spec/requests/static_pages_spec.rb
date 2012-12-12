@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-let(:base_title) { "Railstut Sample App" }
-
 describe "Static pages" do
   
   describe "Home page" do
@@ -11,7 +9,7 @@ describe "Static pages" do
     end
     it "should have the right title" do
 		  visit '/static_pages/home'
-		  page.should have_selector('title', text: "#{base_title} | Home")
+		  page.should have_selector('title', text: " | Home")
 		end
   end
 
@@ -22,7 +20,7 @@ describe "Static pages" do
     end
     it "should have the right title" do
 		  visit '/static_pages/help'
-		  page.should have_selector('title', text: "#{base_title} | Help")
+		  page.should have_selector('title', text: " | Help")
 		end    
   end
 
@@ -33,7 +31,7 @@ describe "Static pages" do
     end
     it "should have the right title" do
 		  visit '/static_pages/about'
-		  page.should have_selector('title', text: "#{base_title} | About")
+		  page.should have_selector('title', text: " | About")
 		end    
   end
 
@@ -44,7 +42,7 @@ describe "Static pages" do
     end
     it "should have the right title" do
 		  visit '/static_pages/contact'
-		  page.should have_selector('title', text: "#{base_title} | Contact")
+		  page.should have_selector('title', text: " | Contact")
 		end    
   end
 
