@@ -1,6 +1,5 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' %>
-  <%= form_for(@user) do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -11,11 +10,10 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.label :password_confirmation, "Confirm Password" %>
   <%= f.password_field :password_confirmation %>
 
-  <%= f.submit "Create my account", 
-    class: "btn btn-large btn-primary" %>
+  <% @btn_label = @user.name ? "Save changes" : "Create my account" %>
+  <%= f.submit @btn_label, class: "btn btn-large btn-primary" %>
 
-  <% end %>
 <% end %>
