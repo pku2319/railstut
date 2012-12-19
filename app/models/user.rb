@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation,
     :remember_token
   has_secure_password
+  has_many :microposts, dependent: :destroy
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
-  has_many :microposts
 
   #EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
