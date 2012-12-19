@@ -5,12 +5,6 @@ class Micropost < ActiveRecord::Base
 
   validates_presence_of :user_id
   validates :content, presence: true, length: { maximum: 140 }
-  
-  def index
-  end
-
-  def show
-  end
 
 
 end
